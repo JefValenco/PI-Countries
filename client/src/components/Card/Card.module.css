@@ -1,0 +1,82 @@
+.card {
+  background-color: #222222;
+  display: inline-block;
+  justify-content: center;
+  border-radius: 4%;
+  padding: 3.4vh;
+  padding-bottom: 2em;
+  height: 50vh;
+  width: 33vh;
+  overflow: hidden;
+  align-content: center;
+  flex-wrap: wrap;
+  line-height: 1.5;
+  padding-top: 5px;
+  transition: all 0.3s ease-out;
+  filter: grayscale(100%);
+  border: 2px solid #ffffff;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 5px 10px 15px 2.5px rgba(80, 76, 66, 0.3);
+  background-color: rgb(255, 255, 255);
+
+  filter: none;
+}
+.card:hover .h2 {
+  color: #222222;
+}
+
+.card:hover .p {
+  background: #222222;
+  color: #ffffff;
+}
+
+.card:hover .p2 {
+  color: #222222;
+}
+
+.h2 {
+  font-family: "Roboto Black", sans-serif;
+  font-size: 3em;
+  line-height: 55px;
+  display: block;
+  color: rgb(255, 255, 255);
+  word-break: break;
+  margin-bottom: 0.2em;
+}
+
+.long-name {
+  font-size: 2em;
+}
+
+.p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgb(255, 255, 255);
+  margin-bottom: 2em;
+  background: #ffffff;
+  color: #222222;
+}
+
+.p2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgb(255, 255, 255);
+  margin-bottom: 5em;
+}
+
+.img {
+  border-radius: 20px;
+  margin-left: -3em;
+  /*   filter: grayscale(100%);
+  transition: all 0.3s ease-out; */
+}
+
+/* .img:hover {
+  filter: none;
+}
+ */
