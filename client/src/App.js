@@ -10,6 +10,8 @@ import {
 } from "../src/views/index";
 import NavBar from "./components/NavBar/NavBar";
 import NotFound from "./views/NotFound/NotFound";
+import axios from "axios";
+axios.defaults.baseURL = "https://deploy-countries-ii59.onrender.com/";
 
 function App() {
   const location = useLocation();

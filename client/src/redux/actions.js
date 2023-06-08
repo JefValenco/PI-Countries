@@ -29,7 +29,7 @@ export const GET_NOMBRE_PAIS = "GET_NOMBRE_PAIS";
 export function getCountries() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3002/country`);
+      const response = await axios.get(`/country`);
 
       /*  console.log("Response data:", response.data); */
       dispatch({ type: GET_COUNTRIES, payload: response.data });
@@ -42,7 +42,7 @@ export function getCountries() {
 /* export function getNombre() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3002/country`);
+      const response = await axios.get(`/country`);
 
       dispatch({ type: GET_NOMBRE_PAIS, payload: response.data });
     } catch (error) {
@@ -61,7 +61,7 @@ export function getNombre(payload) {
 export function getCountryActi() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3002/country`);
+      const response = await axios.get(`/country`);
       dispatch({ type: GET_ACTIVITY, payload: response.data });
     } catch (error) {
       console.log("Get getCountryActi Actions Error:", error);
@@ -72,7 +72,7 @@ export function getCountryActi() {
 export function fetchActivityCountry() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3002/activity`);
+      const response = await axios.get(`/activity`);
       const mappedData = response.data.map((item) => {
         const { name, id, countries } = item;
         return { activity: name, name: countries };
@@ -87,7 +87,7 @@ export function fetchActivityCountry() {
 /* export function fetchActivityCountry() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3002/activity`);
+      const response = await axios.get(`/activity`);
       const mappedData = response.data.flatMap((item) => {
         const { id, countries } = item;
         const countryNames = countries.split(",").map((name) => name.trim());
@@ -103,7 +103,7 @@ export function fetchActivityCountry() {
 /* export function getPajaro() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3002/country`);
+      const response = await axios.get(`/country`);
       const mappedData = response.data.map((item) => {
         const { name, id, countries } = item;
         return { name, id, countries };
@@ -118,7 +118,7 @@ export function fetchActivityCountry() {
 export function getActi() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3002/activity`);
+      const response = await axios.get(`/activity`);
       dispatch({ type: GET_ACTI, payload: response.data });
     } catch (error) {
       console.log("Get getActi Actions Error:", error);
@@ -129,7 +129,7 @@ export function getActi() {
 export function getItemById(id) {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3002/country/${id}`);
+      const response = await axios.get(`/country/${id}`);
       dispatch({ type: GET_ITEM_BY_ID, payload: response.data });
     } catch (error) {
       dispatch({ type: GET_ITEM_BY_ID, payload: null });
@@ -147,7 +147,7 @@ export function orderByActivity(payload) {
 export function orderByActivity2() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3002/activity`);
+      const response = await axios.get(`/activity`);
       dispatch({ type: FILTER_BY_ACTIVITY2, payload: response.data });
     } catch (error) {
       console.log("Get getActi Actions Error:", error);
@@ -229,9 +229,7 @@ export function orderByPoblation(payload) {
 export function getItemByName(payload) {
   return async function (dispatch) {
     try {
-      let response = await axios.get(
-        `http://localhost:3002/country?name=` + payload
-      );
+      let response = await axios.get(`/country?name=` + payload);
       return dispatch({
         type: GET_ITEM_BY_NAME,
         payload: response.data,
@@ -249,9 +247,7 @@ export function getItemByName(payload) {
 export function getActiByName(payload) {
   return async function (dispatch) {
     try {
-      let response = await axios.get(
-        `http://localhost:3002/activity?name=` + payload
-      );
+      let response = await axios.get(`/activity?name=` + payload);
       return dispatch({
         type: GET_ACTI_BY_NAME,
         payload: response.data,
@@ -273,7 +269,7 @@ export function clearSearch() {
 export function getModifyActivities() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3002/activity`);
+      const response = await axios.get(`/activity`);
       dispatch({ type: GET_MODIFY_ACTIVITIES, payload: response.data });
     } catch (error) {
       console.log("Get getActi Actions Error:", error);

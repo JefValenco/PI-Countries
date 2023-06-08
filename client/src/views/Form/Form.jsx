@@ -130,7 +130,7 @@ const Form = () => {
 
     // Send form data to server
     axios
-      .post("http://localhost:3002/activity", form)
+      .post("/activity", form)
       .then((res) => {
         alert("Country created!");
         resetForm();
@@ -142,7 +142,7 @@ const Form = () => {
   const submitHandlerDelete = (event) => {
     event.preventDefault();
     axios
-      .delete(`http://localhost:3002/activity?name=${formDelete.name}`)
+      .delete(`/activity?name=${formDelete.name}`)
       .then((res) => {
         alert("Activity deleted!");
         resetFormDelete();
